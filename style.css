@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(to right, #141e30, #243b55);
+  background-repeat: no-repeat;
+  justify-content: center;
+  background-size: cover;
+  display: grid;
+  font-family: "Inconsolata", monospace;
+  min-height: 100vh;
+  place-items: center;
+}
+
+.holder {
+  position: relative;
+  border: 2px;
+}
+
+.holder:before,
+.holder::after {
+  animation: orbit 5s linear infinite;
+  border-radius: 40%;
+  content: "";
+  height: 150px;
+  position: absolute;
+  width: 150px;
+}
+
+.holder:before {
+  background: #ee9ca7;
+  background: -moz-radial-gradient(top right, #005AA7,#cbb4d4,#cbb4d4);
+  background: radial-gradient(to bottom left, #005AA7, #FFFDE4,#cbb4d4);
+  background: -webkit-radial-gradient(top right, #005AA7, #FFFDE4,#cbb4d4);
+}
+.holder:after {
+  animation-delay: 2.5s;
+  background: #e0e793;
+  background: -moz-radial-gradient(bottom right, #0575E6,#FFFDE4,#B06AB3);
+  background: radial-gradient(to top left, #0575E6,#FFFDE4,#B06AB3);
+  background: -webkit-radial-gradient(bottom right,#0575E6, #FFFDE4,#B06AB3);
+  right: 4;
+  top: 4;
+  z-index: -1;
+}
+.container {
+  position: relative;
+  max-width: 450px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.4);
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 2rem;
+  height: 420px;
+  overflow: hidden;
+  position: relative;
+  width: 420px;
+}
+
+.container::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  
+}
+
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 10px;
+}
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+.Temperature-icon {
+  font-size: 45px;
+  color: #fff;
+}
+
+h1 {
+  color: #fff;
+  letter-spacing: 1.2px;
+  font-size: 30px;
+}
+
+#celsius,
+#fahrenheit,
+#kelvin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+input {
+  flex: 5;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 8px 0 0 8px;
+  padding: 0 10px;
+}
+
+/* for chrome, safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* for Mozila firefox */
+input {
+  -moz-appearance: textfield;
+}
+
+.icon {
+  flex: 1;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 5px;
+  text-align: center;
+  font-size: 30px;
+  background: #708ca7;
+  color: #fff;
+  border-radius: 0 8px 8px 0;
+}
+
+.button {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.button button {
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button button:hover {
+  background:#f70b79;
+  color: #fff;
+}
